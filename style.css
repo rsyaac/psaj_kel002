@@ -1,0 +1,236 @@
+/* ================= RESET DASAR ================= */
+/* Menghilangkan style bawaan browser agar konsisten */
+* {
+    margin: 0; /* Menghapus margin default */
+    padding: 0; /* Menghapus padding default */
+    box-sizing: border-box; /* Perhitungan ukuran elemen lebih rapi */
+    font-family: 'Segoe UI', sans-serif; /* Font modern dan aman */
+}
+
+/* ================= WARNA & VARIABEL ================= */
+:root {
+    --putih: #ffffff; /* Warna putih */
+    --gelap: #0f172a; /* Warna teks utama */
+    --abu: #94a3b8; /* Warna teks sekunder */
+    --accent: #38bdf8; /* Warna aksen futuristik */
+    --glass: rgba(255, 255, 255, 0.15); /* Warna kaca transparan */
+    --border-glass: rgba(255, 255, 255, 0.3); /* Border kaca */
+}
+
+/* ================= BODY ================= */
+body {
+    min-height: 100vh; /* Tinggi minimal satu layar */
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #020617
+    ); /* Background gradasi gelap futuristik */
+    color: var(--putih); /* Warna teks default */
+    line-height: 1.7; /* Jarak antar baris */
+}
+
+/* ================= NAVIGASI ================= */
+header {
+    position: sticky; /* Navbar tetap saat scroll */
+    top: 0; /* Menempel di atas */
+    z-index: 1000; /* Tidak tertutup elemen lain */
+}
+
+nav {
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Logo kiri, menu kanan */
+    align-items: center; /* Tengah vertikal */
+    padding: 16px 60px; /* Ruang dalam */
+    background: var(--glass); /* Efek kaca */
+    backdrop-filter: blur(15px); /* Blur background */
+    border-bottom: 1px solid var(--border-glass); /* Garis kaca */
+}
+
+/* LOGO */
+.logo {
+    font-size: 22px; /* Ukuran teks */
+    font-weight: bold; /* Tebal */
+}
+
+.logo span {
+    color: var(--accent); /* Warna aksen */
+}
+
+/* MENU NAV */
+.nav-links {
+    list-style: none; /* Hilangkan bullet */
+    display: flex; /* Menu sejajar */
+    gap: 30px; /* Jarak antar menu */
+}
+
+.nav-links a {
+    text-decoration: none; /* Hilangkan underline */
+    color: var(--putih); /* Warna teks */
+    font-weight: 500; /* Ketebalan sedang */
+    transition: 0.3s; /* Animasi hover */
+}
+
+.nav-links a:hover {
+    color: var(--accent); /* Warna berubah saat hover */
+}
+
+/* ================= HERO ================= */
+.hero-kelompok {
+    height: 90vh; /* Tinggi hampir satu layar */
+    display: flex; /* Flexbox */
+    align-items: center; /* Tengah vertikal */
+    justify-content: center; /* Tengah horizontal */
+    text-align: center; /* Teks tengah */
+}
+
+/* GLASS BOX HERO */
+.hero-overlay {
+    background: var(--glass); /* Efek kaca */
+    backdrop-filter: blur(20px); /* Blur kuat */
+    border: 1px solid var(--border-glass); /* Border kaca */
+    padding: 50px 70px; /* Ruang dalam */
+    border-radius: 20px; /* Sudut membulat */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3); /* Bayangan lembut */
+}
+
+/* TEKS HERO */
+.hero-overlay h1 {
+    font-size: 48px; /* Judul besar */
+    margin: 15px 0; /* Jarak atas & bawah */
+}
+
+.hero-overlay p {
+    color: var(--abu); /* Warna teks sekunder */
+}
+
+/* TOMBOL */
+.btn-cek {
+    display: inline-block; /* Supaya bisa diberi padding */
+    margin-top: 15px; /* Jarak atas */
+    padding: 12px 32px; /* Ukuran tombol */
+    background: rgba(56,189,248,0.25); /* Transparan */
+    color: var(--putih); /* Warna teks */
+    border: 1px solid var(--border-glass); /* Border kaca */
+    border-radius: 30px; /* Membulat */
+    text-decoration: none; /* Hilangkan underline */
+    backdrop-filter: blur(10px); /* Blur */
+    transition: 0.3s; /* Animasi hover */
+}
+
+.btn-cek:hover {
+    background: rgba(56,189,248,0.45); /* Lebih terang */
+    transform: translateY(-3px); /* Efek naik */
+}
+
+/* ================= SECTION UMUM ================= */
+.section-container {
+    padding: 90px 60px; /* Jarak dalam section */
+}
+
+.container {
+    max-width: 1200px; /* Lebar maksimal */
+    margin: auto; /* Tengah */
+}
+
+.section-title {
+    text-align: center; /* Tengah */
+    font-size: 34px; /* Ukuran judul */
+    margin-bottom: 60px; /* Jarak bawah */
+}
+
+/* ================= KARTU ANGGOTA ================= */
+.kelompok-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
+    gap: 30px; /* Jarak antar kartu */
+}
+
+/* KARTU GLASS */
+.kelompok-card {
+    background: var(--glass); /* Efek kaca */
+    backdrop-filter: blur(18px); /* Blur */
+    border: 1px solid var(--border-glass); /* Border kaca */
+    border-radius: 18px; /* Sudut membulat */
+    overflow: hidden; /* Potong keluar */
+    text-decoration: none; /* Hilangkan underline */
+    color: var(--putih); /* Warna teks */
+    transition: 0.3s; /* Animasi hover */
+}
+
+.kelompok-card:hover {
+    transform: translateY(-10px); /* Naik saat hover */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35); /* Bayangan */
+}
+
+/* GAMBAR */
+.card-img img {
+    width: 100%; /* Lebar penuh */
+    height: 200px; /* Tinggi tetap */
+    object-fit: cover; /* Proporsional */
+}
+
+/* INFO */
+.card-info {
+    padding: 20px; /* Ruang dalam */
+    text-align: center; /* Tengah */
+}
+
+.card-info p {
+    color: var(--abu); /* Warna sekunder */
+    font-size: 14px; /* Ukuran kecil */
+}
+
+/* ================= MAKALAH ================= */
+.content-wrapper {
+    display: grid; /* Grid */
+    grid-template-columns: 2fr 1fr; /* PDF lebih besar */
+    gap: 30px; /* Jarak */
+}
+
+.pdf-container {
+    height: 420px; /* Tinggi PDF */
+    background: var(--glass); /* Kaca */
+    backdrop-filter: blur(15px); /* Blur */
+    border-radius: 15px; /* Sudut membulat */
+    overflow: hidden; /* Potong keluar */
+    border: 1px solid var(--border-glass); /* Border */
+}
+
+/* ================= VIDEO ================= */
+.video-container iframe {
+    width: 100%; /* Lebar penuh */
+    height: 360px; /* Tinggi video */
+    border-radius: 15px; /* Membulat */
+    border: none; /* Hilangkan border */
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 80px; /* Jarak atas */
+    padding: 25px; /* Ruang dalam */
+    text-align: center; /* Tengah */
+    background: var(--glass); /* Efek kaca */
+    backdrop-filter: blur(12px); /* Blur */
+    border-top: 1px solid var(--border-glass); /* Border */
+    color: var(--abu); /* Warna teks */
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Navbar vertikal */
+        gap: 15px; /* Jarak */
+    }
+
+    .hero-overlay {
+        padding: 35px; /* Padding lebih kecil */
+    }
+
+    .hero-overlay h1 {
+        font-size: 36px; /* Judul lebih kecil */
+    }
+
+    .content-wrapper {
+        grid-template-columns: 1fr; /* Jadi satu kolom */
+    }
+}
